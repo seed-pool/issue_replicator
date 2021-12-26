@@ -1,0 +1,8 @@
+name: 'Issue Replicator'
+description: 'Replicate the issue to another repository'
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: 'copy'
+  color: 'orange'

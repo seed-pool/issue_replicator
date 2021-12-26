@@ -53,7 +53,7 @@ class Replicator():
         return "{}: {}\n".format(self.repo.full_name, self.issue.html_url)
 
     def add_reference_messages(self, replicators):
-        body = self.issue.body
+        body = self.issue.body or ""
         for replicator in replicators:
             if replicator.repo.full_name != self.repo.full_name:
                 body += replicator.reference_message()

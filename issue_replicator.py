@@ -50,7 +50,7 @@ class Replicator():
         raise Exception
 
     def reference_message(self):
-        return "{}: {}\n".format("depends on", self.issue.html_url)
+        return "{} {}\n".format("depends on ", self.issue.html_url)
 
     def add_reference_messages(self, replicators):
         body = self.issue.body + "\n" if self.issue.body else ""

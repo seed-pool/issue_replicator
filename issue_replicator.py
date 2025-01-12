@@ -18,7 +18,7 @@ class IssueReplicator():
         replicators = [Replicator(repository_name) for repository_name in target_repository_by_label.values() if repository_name]
         list((replicator.replicate_issue(origin.issue) for replicator in replicators))
         list((replicator.add_reference_messages([origin] + replicators) for replicator in [origin] + replicators))
-        origin.unlabel(list(target_repository_by_label.keys()) + [ISSUE_REPLICATOR_LABEL])
+        origin.unlabel([ISSUE_REPLICATOR_LABEL])
 
     def parse_repository_by_label(self):
         try:
